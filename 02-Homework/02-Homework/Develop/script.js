@@ -5,7 +5,9 @@
 // everything saves even when the page is refreshed 
 
 
-var currentTime = moment().currentTime;
+var currentTime = moment("current-time").format("MMM Do, YYYY");
+
+
 
 
 
