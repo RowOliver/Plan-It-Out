@@ -4,10 +4,18 @@ function currentDay(){
   $("currentDay").text(day)
 }
 
+// somehow keep the time running if possible 
+
+
+//local storage 
+
+var storeData = {
+  stor
+}
 
 
 
 
-var timeBlock = document.getElementById("time-block");
-console.log(timeBlock);
+
+
 
