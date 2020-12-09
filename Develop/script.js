@@ -1,13 +1,12 @@
 //display current time 
-var time = moment();
+function currenTime() {
+    var day = moment().format('MMMM Do YYYY, h:nn:ss a');
+    $("#currentDay").text(day)
 
-setInterval(function() {
-  $("#currentDay").text(time.format("dddd MMMM Do"));
-
-}, 1000);
+}
 
 // somehow keep the time running if possible 
-
+setInterval(currenTime, 1000);
 
 //local storage and storing appointments
 function saveAppointmentNine() {
@@ -72,6 +71,42 @@ function saveAppointmentSeventeen() {
   var fiveBtn = document.getElementById("hour-5").nodeValue;
   localStorage.setItem(fiveBtn, "fiveBtn");
   alert("Appointment saved");
+  console.log(localStorage);
+}
+
+makeAppointment();
+
+//Now get from local storage for reload 
+//create var for each to get back what was stored 
+
+function makeAppointment() {
+  var nineBtn = localStorage.getItem("nineBtn");
+  document.getElementById("hour-9").value = nineBtn;
+
+  var tenBtn =localStorage.getItem("tenBtn");
+  document.getElementById("hour-10").value = tenBtn;
+
+  var elevenBtn = localStorage.getItem("elevenBtn");
+  document.getElementById("hour-11").value = elevenBtn;
+
+  var twelveBtn = localStorage.getItem("twelveBtn");
+  document.getElementById("hour-12").value = twelveBtn;
+
+  var oneBtn = localStorage.getItem("oneBtn");
+  document.getElementById("hour-1").value = oneBtn;
+
+  var twoBtn = localStorage.getItem("twoBtn");
+  document.getElementById("hour-2").value = twoBtn;
+
+  var threeBtn = localStorage.getItem("threeBtn");
+  document.getElementById("hour-3").value = threeBtn;
+
+  var fourBtn = localStorage.getItem("fourBtn");
+  document.getElementById("hour-4").value = fourBtn;
+
+  var fiveBtn = localStorage.getItem("fiveBtn");
+  document.getElementById("hour-5").value = fiveBtn; 
+
   console.log(localStorage);
 }
 
