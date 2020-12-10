@@ -21,6 +21,7 @@ function saveAppointmentTen() {
   var tenBtn = document.getElementById("hour-10").nodeValue;
   localStorage.setItem(tenBtn, "tenBtn");
   alert("Appointment saved");
+  onclick="saveAppointmentTen()";
   console.log(localStorage);
 }
 
