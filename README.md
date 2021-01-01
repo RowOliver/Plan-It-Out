@@ -16,6 +16,8 @@ Strategy:
 
 Using Moment JS, the current day will display as to improve the functionality of the planner 
 
+Using Moment the current date is displayed at the time of the screen 
+![moment](images/moment.png)
 
 
 I created a time container with a button that is used to save the appointment to local storage 
