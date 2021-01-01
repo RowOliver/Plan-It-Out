@@ -1,7 +1,7 @@
 
 //current time using moment 
 $(document).ready(function () {
-  var currentDate = moment().format('MM/DD/YYYY');
+  var currentDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
   console.log(currentDate);
 
   $('#currentDate').text(currentDate);
@@ -118,23 +118,24 @@ function makeAppointment() {
 // loop for past/prestent/future time periods 
 
 // var present = new Date().getHours();
+  var currentDate = new Date().getHours();
 
 for (i = 9; i < 6; i++) {
-  if (present > i) {
+  if (currentDate > i) {
     $("#textarea" + i).addClass("past");
     
   }
-  else if (present === i) {
+  else if (currentDate === i) {
     $("#textarea" + i).addClass("present");
 
   }
-  else if (present < i ){
+  else if (currentDate < i ){
     $("#textare" == i).addClass("future");
   }
 
 }
 
-console.log(present);
+console.log(currentDate);
 
 
 
