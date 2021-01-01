@@ -1,16 +1,16 @@
 
 //current time using moment 
-$(document).ready(function () {
-  var currentDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-  console.log(currentDate);
+$(document).ready(function( ) {
+  var currentTime = moment().format("MM/DD/YYYY");
+  console.log(currentTime);
 
-  $('#currentDate').text(currentDate);
+  $("#currentTime").text(currentTime);
 
 })
-
-// somehow keep the time running if possible 
 // setInterval(currentTime, 60000);
-  currentTime();
+setInterval(currentTime, 1000);
+
+ 
 
 //local storage and storing appointments
 function saveAppointmentNine() {
@@ -118,24 +118,27 @@ function makeAppointment() {
 // loop for past/prestent/future time periods 
 
 // var present = new Date().getHours();
-  var currentDate = new Date().getHours();
+  var currentTime = new Date().getHours();
 
 for (i = 9; i < 6; i++) {
-  if (currentDate > i) {
+  if (currentTime > i) {
     $("#textarea" + i).addClass("past");
     
   }
-  else if (currentDate === i) {
+  else if (currentTime === i) {
     $("#textarea" + i).addClass("present");
 
   }
-  else if (currentDate < i ){
+  else if (currentTime < i ){
     $("#textare" == i).addClass("future");
   }
 
 }
 
-console.log(currentDate);
+
+console.log(currentTime);
+
+
 
 
 
