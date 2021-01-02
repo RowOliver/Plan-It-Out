@@ -118,7 +118,7 @@ function makeAppointment() {
 // loop for past/prestent/future time periods 
 
 // var present = new Date().getHours();
-  var currentTime = new Date().getHours();
+  const currentTime = new Date().getHours();
 
 for (i = 9; i < 6; i++) {
   if (currentTime > i) {
