@@ -1,198 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="Develop/style.css">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-    rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-
-    />
-   
-
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    
-​
-    <title>Work Day Scheduler</title>
-    
-  
-  </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="Develop/style.css"/>
+
+
+  <title>Work Day Planner</title>
+</head>
   
   <body>
-      <header class="jumbotron">
-          <h1 class="display-3">Work Day Scheduler</h1>
-          <p class="lead">A simple calendar app for scheduling your work day</p>
-          ​<div id="currentTime"></div>
-          
-          ​
+      <div class="container">
+        <header class="card text-center shadow p-3 mb-5 mt-3 bg-light rounded text-black">
+          <h1 class="display-4">Plan It Out</h1>
+            <p class="head">Get Organized. Stay Organized.</p>
+          <p id="theDate" class="head"></p>
         </header>
-​
-​
-​
-​
-  <!--Time Block code here--> 
-    <div id="time-container" class= "time-container"></div>
-        
-          
-          <div class="hour-row">
-          <h3 class="col-1 hour">9am</h3>
-​
-          <textarea 
-          id="hour-9" 
-          class="col-10 hour 9">
-        </textarea>
-​
-          <button 
-          class="col-1 saveBtn far fa-save fa-2x"
-          id= "nineBtn">
-        </button>
-      </div>
-
-
-        <div class="hour-row">
-          <h3 class="col-1 hour">10am</h3>
-​
-          <textarea 
-          id="hour-10"
-          class="col-10 hour">
-          </textarea>
-​
-          <button 
-          class="col-1 saveBtn far fa-save fa-2x" 
-          id= "tenBtn">
-        </button>
-      </div>
-
-        
-      </div>
-      <div class="hour-row">
-        <h3 class="col-10 hour">11am</h3>
-​
-        <textarea 
-        id="hour-11"
-         class="col-10 hour 11">
-        </textarea>
-​
-        <button 
-        class="col-1 saveBtn far fa-save fa-2x" 
-        id= "elevenBtn">
-      </button>
-       
-      
-       
-    </div>
-    <div class="hour-row">
-      <h3 class="col-1 hour">12pm</h3>
-​
-      <textarea 
-      id="hour-12" 
-       class="col-10 hour 12">
-      </textarea>
-​
-      <button 
-      class="col-1 saveBtn far fa-save fa-2x" 
-      id= "tweleveBtn">
-    </button>
-      
-   
-​
-  </div>
-  <div class="hour-row">
-    <h3 class="col-1 hour">1pm</h3>
-​
-    <textarea 
-    id="hour-1"
-     class="col-10 hour 1">
-    </textarea>
-​
-    <button 
-    class="col-1 saveBtn far fa-save fa-2x" 
-    id= "oneBtn">
-  </button>
-    
- 
-​
-</div>
-<div class="hour-row">
-  <h3 class="col-1 hour">2pm</h3>
-​
-  <textarea 
-  id="hour-2" 
-   class="col-10 hour 2">
-  </textarea>
-​
-  <button 
-  class="col-1 saveBtn far fa-save fa-2x" 
-  id= "twoBtn">
-</button>
-  
-​
-​
-</div>
-<div class="hour-row">
-  <h3 class="col-1 hour">3pm</h3>
-​
-  <textarea 
-  id="hour-3"
-   class="col-10 hour 3">
-  </textarea>
-​
-  <button 
-  class="col-1 saveBtn far fa-save fa-2x" 
-  id= "threeBtn">
-</button>
- 
-​
- 
-</div>
-<div class="hour-row">
-  <h3 class="col-1 hour">4pm</h3>
-​
-  <textarea 
-  id="hour-4"
-   class="col-10 hour 4">
-  </textarea>
-​
-  <button 
-  class="col-1 saveBtn far fa-save fa-2x" 
-  id= "fourBtn">
-</button>
- 
-​
- 
-</div>
-<div class="hour-row">
-  <h3 class="col-1 hour">5pm</h3>
-​
-  <textarea 
-  id="hour-5" 
-   class="col-10 hour 5">
-  </textarea>
-​
-  <button 
-  class="col-1 saveBtn far fa-save fa-2x" 
-  id= "fiveBtn">
-</button>
-​
+       <div class="card shadow-sm mb-2">
+          <div class="row justify-content" id="9am">
+            <p id="time" class="text-body col-1">9 AM </p>
+              <input type="text" id="9" class="col-10" placeholder="Start planning out your week!">
+            <button class="rowBtn btn-primary col-1">Save</button>
           </div>
+      </div>
+      <div class="card shadow-sm mb-2">
+        <div class="row" id="10am">
+            <p id="time" class="text-body col-1">10 AM </p>
+              <input type="text" id="10" class="col-10" placeholder="">
+            <button class="rowBtn btn-primary col-1">Save</button>
         </div>
-   </div>
-​
-  
-   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-   <script src="Develop/script.js"></script>
+      </div>
+      <div class="card shadow-sm mb-2">
+        <div class="row" id="11am">
+            <p id="time" class=" text-body col-1">11 AM</p>
+              <input type="text" id="11" class="col-10" placeholder="">
+            <button class="rowBtn btn-primary col-1">Save</button>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-2">
+        <div class="row" id="12pm">
+            <p id="time" class="text-body col-1">12 PM</p>
+              <input type="text" id="12" class="col-10" placeholder="">
+            <button class="rowBtn btn-primary col-1">Save</button>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-2">
+        <div class="row" id="1pm">
+            <p id="time" class="text-body col-1">1 PM</p>
+              <input type="text" id="13" class="col-10" placeholder="">
+            <button class="rowBtn btn-primary col-1">Save</button>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-2">
+        <div class="row" id="2pm">
+            <p id="time" class="text-body col-1">2 PM</p>
+              <input type="text" id="14" class="col-10" placeholder=""> 
+            <button class="rowBtn btn-primary col-1">Save</button>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-2">
+        <div class="row" id="3pm">
+            <p id="time" class="text-body col-1">3 PM</p>
+              <input type="text" id="15" class="col-10" placeholder=""> 
+            <button class="rowBtn btn-primary col-1">Save</button>
+        </div>
+      </div>
+      <div class="card shadow-sm mb-2">
+        <div class="row" id="4pm">
+            <p id="time" class="text-body col-1">4 PM</p>
+              <input type="text" id="16" class="col-10" placeholder=""> 
+            <button class="rowBtn btn-primary col-1">Save</button>
+        </div>
+      </div>
+       <div class="card shadow-sm mb-2">
+        <div class="row" id="5pm">
+            <p id="time" class="text-body col-1">5 PM</p>
+              <input type="text" id="17" class="col-10" placeholder=""> 
+            <button class="rowBtn btn-primary col-1">Save</button>
+            <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+        </div>
+      </div>
   </body>
-​
 </html>
